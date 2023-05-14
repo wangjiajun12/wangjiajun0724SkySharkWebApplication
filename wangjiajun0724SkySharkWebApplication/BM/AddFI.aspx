@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddFI.aspx.cs" Inherits="wangjiajun0724SkySharkWebApplication.BM.AddFI" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddFI.aspx.cs" Inherits="wangjiajun0724SkySharkWebApplication.BM.AddFI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     BM
     <style type="text/css">
@@ -35,7 +35,7 @@
                 <tr>
                    <td></td>
                    <td>
-                       <asp:HyperLink ID="HyperLink1" runat="server">Change Password</asp:HyperLink>
+                       <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Change Password.aspx">Change Password</asp:HyperLink>
 </td>
                    <td>
                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Logoff.aspx">Logoff</asp:HyperLink></td>
@@ -151,5 +151,6 @@
                       </tr>
            </table>
        </div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ARPDatabaseConnectionString %>" ProviderName="<%$ ConnectionStrings:ARPDatabaseConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [dtCancellations]"></asp:SqlDataSource>
        </form>
 </asp:Content>
