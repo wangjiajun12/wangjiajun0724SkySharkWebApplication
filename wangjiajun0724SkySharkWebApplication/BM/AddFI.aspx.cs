@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -20,7 +20,7 @@ namespace wangjiajun0724SkySharkWebApplication.BM
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings[" ARPDMatabaseConnectionString"].ConnectionString);
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ARPDatabaseConnectionString"].ConnectionString);
             conn.Open();
             //create dataadapter
             string queryString = "Select FltNo from dtFltDetails";
@@ -65,7 +65,7 @@ namespace wangjiajun0724SkySharkWebApplication.BM
             try
             {
                 conn.Open();
-                String updateSql = "INSERT INTO [dtFItDetails] ([FItNo], [Origin], [Destination], [Deptime],[Arrtime],[AircraftType], [SeatsExec], [SeatsBn], [FareExec], [FareBn], [LaunchDate]) VALUES(@FltNo, @Origin, @Destination, @Deptime, @Arrtime, @AircraftType, @SeatsExec,@SeatsBn,@FareExec,@FareBn,@LaunchDate)";
+                String updateSql = "INSERT INTO [dtFltDetails] ([FltNo], [Origin], [Destination], [Deptime],[Arrtime],[AircraftType], [SeatsExec], [SeatsBn], [FareExec], [FareBn], [LaunchDate]) VALUES(@FltNo, @Origin, @Destination, @Deptime, @Arrtime, @AircraftType, @SeatsExec,@SeatsBn,@FareExec,@FareBn,@LaunchDate)";
                 SqlCommand cmd = new SqlCommand(updateSql, conn);
                 cmd.Parameters.AddWithValue("@FltNo", txtFlightNumber.Text.Trim());
                 cmd.Parameters.AddWithValue("@Origin", txtPlace.Text.Trim());
